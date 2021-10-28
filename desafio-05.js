@@ -16,36 +16,54 @@ function array2(produtos) {
 
 console.log(array2(produtos)) */
 
-function book(livros) {
-    let livros = {
+/* Crie uma função chamada `book`, que recebe um parâmetro, que será o nome do
+livro. Dentro dessa função, declare uma variável que recebe um objeto com as
+seguintes características:
+- esse objeto irá receber 3 propriedades, que serão nomes de livros;
+- cada uma dessas propriedades será um novo objeto, que terá outras 3
+propriedades:
+    - `quantidadePaginas` - Number (quantidade de páginas)
+    - `autor` - String
+    - `editora` - String
+- A função deve retornar o objeto referente ao livro passado por parâmetro.
+- Se o parâmetro não for passado, a função deve retornar o objeto com todos
+os livros. */
+
+
+
+function book(name) {  
+    
+      livros = {
+    
         codigoLimpo: {
+            
             quantidadePaginas: 300,
             autor: "Matheus",
             editora: "Saber"
         },
-        pontoCego: {
+
+        pontoCego:  {
+           
             quantidadePaginas: 136,
             autor: "Diego",
             editora: "Viver"
         },
         adrenalina: {
-            quantidadePaginas: 243,
+           
+            quantidadePaginas: 243, 
             autor: "Rodolfo",
             editora: "Bem"
         }
-    }
+    
+     }
+   
 
-    /* return new Promise((res, reject) => {
-        try {
-            let livro = book(livros)
-            livro = livro.map((l) => l.livro)
-            res(livro)
-        } catch (err) {
-            reject(err)
-        } 
-    }) */
+  if(name) {
+       return livros[name]
+   } else {
+       return livros
+   } 
 
-    return livros
 }
 
-console.log(book(codigoLimpo))
+console.log(book("pontoCego").quantidadePaginas)
